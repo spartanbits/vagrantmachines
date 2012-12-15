@@ -56,6 +56,9 @@ wget --no-check-certificate 'https://raw.github.com/mitchellh/vagrant/master/key
 chmod 600 /home/vagrant/.ssh/authorized_keys
 chown -R vagrant /home/vagrant/.ssh
 
+#Configure ssh without DNS as recommend http://vagrantup.com/v1/docs/base_boxes.html
+echo "UseDNS no" >> /etc/ssh/sshd_config
+
 # Installing the virtualbox guest additions
 VBOX_VERSION=$(cat /home/vagrant/.vbox_version)
 cd /tmp

@@ -43,7 +43,7 @@ Veewee::Session.declare( {
   :os_type_id           => 'Ubuntu_64',
   :postinstall_files    => [ "postinstall.sh" ],
   :postinstall_timeout  => "10000",
-  :ssh_login_timeout    => "60",
+  :ssh_login_timeout    => "3600",
   :ssh_user             => "vagrant",
   :ssh_password         => "vagrant",
   :ssh_key              => "",
