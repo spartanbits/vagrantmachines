@@ -16,7 +16,7 @@ Virtual machines are generated for [virtualbox](https://www.virtualbox.org/), so
 To install veewee follow [current stable](https://github.com/jedi4ever/veewee/tree/v0.2.2)
 or the [last release](https://github.com/jedi4ever/veewee/blob/master/doc/installation.md).
 
-This machine has been generate with [current stable documentation](https://github.com/jedi4ever/veewee/blob/v0.2.2/README.md)
+This machine has been generate with [last release](https://github.com/jedi4ever/veewee/blob/master/doc/installation.md)
 
 To install veewee:
 
@@ -27,17 +27,17 @@ To install veewee:
 To generate virtual machine:
 
 ```
-cd heroku-python-2.7.2-redis-2.4.11
-vagrant basebox build 'ubuntu-10.04.4-server-amd64'
+cd gochatserver
+veewee vbox build 'ubuntu-10.04.4-server-amd64'
 ```
 
 Wait for a while ...
 
 Verify virtual machine:
 
-1. Validate machine: ```vagrant basebox validate 'ubuntu-10.04.4-server-amd64'```
+1. Validate machine: ```veewee vbox validate 'ubuntu-10.04.4-server-amd64'```
 2. Now test acceess to machine through ssh: ```ssh -p 7222 vagrant@localhost```
-3. Make the box file: ```vagrant basebox export 'ubuntu-10.04.4-server-amd64'```
+3. Make the box file: ``` vagrant package --base 'ubuntu-10.04.4-server-amd64' --output ''ubuntu-10.04.4-server-amd64.box'```
 
 # Work with generated virtual machines
 
