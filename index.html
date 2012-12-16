@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Vagrantmachines by spartanbits</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/main.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+
+      <header>
+        <h1>Vagrantmachines</h1>
+        <p>Vagrant box definition files to generate virtual machines with the software version of productions environments</p>
+      </header>
+
+      <div id="banner">
+        <span id="logo"></span>
+
+        <a href="https://github.com/spartanbits/vagrantmachines" class="button fork"><strong>View On GitHub</strong></a>
+        <div class="downloads">
+          <span>Downloads:</span>
+          <ul>
+            <li><a href="https://github.com/spartanbits/vagrantmachines/zipball/master" class="button">ZIP</a></li>
+            <li><a href="https://github.com/spartanbits/vagrantmachines/tarball/master" class="button">TAR</a></li>
+          </ul>
+        </div>
+      </div><!-- end banner -->
+
+    <div class="wrapper">
+      <nav>
+        <ul></ul>
+      </nav>
+      <section>
+        <h1>Introduction</h1>
+
+<p>Virtual machines for internal use is a project to generate virtual machines with programs
+and scripts in an automatic way, trying to avoid this boilerplate task and to take control
+about test machines where projects are developed.</p>
+
+<p>To do it we are using 2 programs:</p>
+
+<ul>
+<li>
+<a href="https://github.com/jedi4ever/veewee">veewee</a>: to generate box files, base file to execute virutal machines.</li>
+<li>
+<a href="http://vagrantup.com/">vagrant</a>: to use box files</li>
+</ul><p>Virtual machines are generated for <a href="https://www.virtualbox.org/">virtualbox</a>, so install it.</p>
+
+<h1>Generate box files with veewee</h1>
+
+<p>To install veewee follow <a href="https://github.com/jedi4ever/veewee/tree/v0.2.2">current stable</a>
+or the <a href="https://github.com/jedi4ever/veewee/blob/master/doc/installation.md">last release</a>.</p>
+
+<p>This machine has been generate with <a href="https://github.com/jedi4ever/veewee/blob/master/doc/installation.md">last release</a></p>
+
+<p>To install veewee:</p>
+
+<p><code>gem install veewee</code></p>
+
+<h2>Steps to make a virtual machine</h2>
+
+<p>To generate virtual machine:</p>
+
+<pre><code>cd gochatserver
+veewee vbox build 'ubuntu-10.04.4-server-amd64'
+</code></pre>
+
+<p>Wait for a while ...</p>
+
+<p>Verify virtual machine:</p>
+
+<ol>
+<li>Validate machine: <code>veewee vbox validate 'ubuntu-10.04.4-server-amd64'</code>
+</li>
+<li>Now test acceess to machine through ssh: <code>ssh -p 7222 vagrant@localhost</code>
+</li>
+<li>Make the box file: <code>vagrant package --base 'ubuntu-10.04.4-server-amd64' --output ''ubuntu-10.04.4-server-amd64.box'</code>
+</li>
+</ol><h1>Work with generated virtual machines</h1>
+
+<p>If you don't have vagrant installed (type vagrant on your terminal to check it),
+please install latest version of <a href="http://downloads.vagrantup.com/">vagrant</a></p>
+
+<p>If you have the box file use:</p>
+
+<p><code>vagrant init ubuntu-10.04.4-server-amd64 ubuntu-10.04.4-server-amd64.box</code></p>
+
+<p>If not:</p>
+
+<p><code>vagrant init box-name box-url</code></p>
+
+<p>It will generate a Vagrantfile in your current directory</p>
+
+<p>Here you can edit network, port forwarding, gui mode, shared folders and other automatic tasks with puppet.</p>
+
+<p>To start vagrant machine type:</p>
+
+<p><code>vagrant up</code></p>
+
+<p>A new virtualmachine will be booted and a ssh terminal is available through:</p>
+
+<p><code>vagrant ssh</code></p>
+
+<p>You can halt, reboot or resume your vagrant machine with:</p>
+
+<p><code>vagrant [halt] [reboot] [resume]</code> commands</p>
+
+<p>To destroy the vagrant machine type:</p>
+
+<p><code>vagrant destroy</code> and it will be removed from your Virtualbox catalog.</p>
+
+<p>To remove imported box type:</p>
+
+<p><code>vagrant box remove box-name</code></p>
+      </section>
+      <footer>
+        <p>Project maintained by <a href="https://github.com/spartanbits">spartanbits</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
