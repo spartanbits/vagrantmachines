@@ -87,14 +87,14 @@ ln -sf /usr/local/bin/python2.7 /usr/bin/python2.7
 
 wget http://pypi.python.org/packages/2.7/s/setuptools/setuptools-0.6c11-py2.7.egg#md5=fe1f997bc722265116870bc7919059ea
 sh setuptools-0.6c11-py2.7.egg
-easy_install-2.7 pip==1.0.2
-pip install virtualenv==1.7.0
+easy_install-2.7 pip==1.1
+pip install virtualenv==1.8.4
 
 #Installing redis 2.4.11
 apt-get -y install tcl8.5
 cd /tmp
-wget http://redis.googlecode.com/files/redis-2.4.11.tar.gz
-tar xvfz redis-2.4.11.tar.gz && cd redis-2.4.11
+wget http://redis.googlecode.com/files/redis-2.4.15.tar.gz
+tar xvfz redis-2.4.15.tar.gz && cd redis-2.4.15
 make -j
 make install
 
@@ -147,7 +147,7 @@ apt-key adv --keyserver keyserver.ubuntu.com --recv 7F0CEB10
 apt-get update
  
 # Install mongodb
-apt-get install mongodb-10gen
+apt-get install mongodb20-10gen
 
 # Remove items used for building, since they aren't needed anymore
 apt-get -y remove linux-headers-$(uname -r) build-essential
