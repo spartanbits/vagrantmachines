@@ -37,7 +37,7 @@ Verify virtual machine:
 
 1. Validate machine: ```veewee vbox validate 'ubuntu-10.04.4-server-amd64'```
 2. Now test acceess to machine through ssh: ```ssh -p 7222 vagrant@localhost```
-3. Make the box file: ``` vagrant package --base 'ubuntu-10.04.4-server-amd64' --output ''ubuntu-10.04.4-server-amd64.box'```
+3. Make the box file: ``` vagrant package --base 'ubuntu-10.04.4-server-amd64' --output 'ubuntu-10.04.4-server-amd64.box'```
 
 # Work with generated virtual machines
 
