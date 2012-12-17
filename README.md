@@ -20,7 +20,7 @@ This machine has been generate with [last release](https://github.com/jedi4ever/
 
 To install veewee:
 
-```gem install veewee```
+```sudo gem1.9 install veewee```
 
 ## Steps to make a virtual machine
 
